@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import withFirebaseAuth from 'react-with-firebase-auth'
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
 import firebaseConfig from './firebaseConfig';
+
+import Header from './components/Header/Header'
+import ListOverview from './components/ListOverview/ListOverview'
+
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const firebaseAppAuth = firebaseApp.auth();
 const providers = {
@@ -21,18 +26,13 @@ class App extends Component {
 
     return (
         <div className="App">
-            <header className="App-header">
-                {
-                    user
-                        ? <p>Hello, {user.displayName}</p>
-                        : <p>Please sign in.</p>
-                }
-                {
-                    user
-                        ? <button onClick={signOut}>Sign out</button>
-                        : <button onClick={signInWithGoogle}>Sign in with Google</button>
-                }
-            </header>
+            <BrowserRouter>
+                    <Header user={user} signOut={signOut} signInWithGoogle={signInWithGoogle} />
+                    <Switch>
+                        <Route exact path="/" component={ListOverview} />
+                        {/*<Route component={NotFound} />*/}
+                    </Switch>
+            </BrowserRouter>
         </div>
     );
   }

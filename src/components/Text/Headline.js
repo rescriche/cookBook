@@ -1,5 +1,5 @@
 import {React} from "react";
-import styles from "./heading"
+import styles from "./headline.module.scss"
 
 const Headline = (props) => {
     return (

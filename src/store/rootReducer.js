@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import configReducer from './config/configReducer'
+import recipeReducer from './recipes/recipeReducer'
 
 const rootReducer = combineReducers({
-    config: configReducer
+    recipes: recipeReducer
 });
 
 export default rootReducer;

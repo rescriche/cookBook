@@ -1,11 +1,22 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { addItem } from "../../store/recipes/recipeActions";
 
 class ListOverview extends React.Component {
+    addAction() {
+        this.props.addItem('text')
+    };
+
     render() {
         return (
-            <p>This Is the List Overview</p>
+            <button onClick={this.addAction()}>Add Recipe</button>
         )
     }
 }
 
-export default ListOverview;
+const mapDispatchToProps = {
+    addItem
+}
+
+
+export default connect(null, mapDispatchToProps)(ListOverview);

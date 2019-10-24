@@ -8,7 +8,6 @@ import firebaseConfig from './firebaseConfig';
 
 import Header from './components/Header/Header'
 import ListOverview from './components/ListOverview/ListOverview'
-
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const firebaseAppAuth = firebaseApp.auth();
 const providers = {

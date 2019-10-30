@@ -1,0 +1,29 @@
+.wrapper {
+    border: 2px solid rebeccapurple;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    padding: 10%;
+
+    * {
+      margin-top: 20px;
+    }
+}
+
+.input {
+    border: none;
+    border-bottom: 3px solid rebeccapurple;
+    min-height: 50px;
+}
+
+.textarea {
+    border: 3px solid rebeccapurple;
+    min-height: 400px;
+}
+
+.btn {
+    border-radius: 5px;
+    color: beige;
+    background: rebeccapurple;
+    padding: 15px;
+}

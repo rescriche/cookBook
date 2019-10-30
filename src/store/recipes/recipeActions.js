@@ -1,9 +1,11 @@
 import { ActionTypes as recipeActionTypes } from './recipeConstants'
 
-function addItem( text ) {
+function addItem( itemText ) {
     return {
         type: recipeActionTypes.ADD_ITEM,
-        text
+        payload: {
+            itemText
+        }
     }
 }
 

@@ -41,17 +41,19 @@ class ItemCreator extends React.Component {
         } = this.state;
 
         return (
-            <form className={styles.wrapper}>
-                <input
-                    className={styles.input}
-                    type='text'
-                    name='name'
-                    value={inputValue}
-                    onChange={this.onChangeInputValue}
-                />
-                <textarea className={styles.textarea} value={textareaValue} onChange={this.onChangeTextareaValue}/>
-                <button className={styles.btn} type='submit' onClick={this.submitItem}>Add recipe</button>
-            </form>
+            <div className={styles.wrapper + (this.props.open ? ' ' + styles.open : '')}>
+                <form className={styles.form}>
+                    <input
+                        className={styles.input}
+                        type='text'
+                        name='name'
+                        value={inputValue}
+                        onChange={this.onChangeInputValue}
+                    />
+                    <textarea className={styles.textarea} value={textareaValue} onChange={this.onChangeTextareaValue}/>
+                    <button className={styles.btn} type='submit' onClick={this.submitItem}>Add recipe</button>
+                </form>
+            </div>
         );
     }
 }

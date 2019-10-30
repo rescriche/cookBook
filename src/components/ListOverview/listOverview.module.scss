@@ -7,14 +7,17 @@
     margin: 0 auto;
 }
 
-.btn {
-    border-radius: 50%;
+.toggleBtn {
+    position: absolute;
+    right: 10%;
+    top: 20px;
+    z-index: 20;
+    border-radius: 5px;
     font-size: 22px;
-    color: beige;
-    padding: 50px;
+    padding: 5px;
     min-width: 50px;
-    background: darkred;
-    filter: blur(10px) contrast(12);
+    background: rebeccapurple;
+    color: beige;
 
     &:active,
     &:focus {
